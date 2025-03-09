@@ -13,5 +13,5 @@
 
   # monospace font
   stylix.fonts.monospace.package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
-  stylix.fonts.monospace.name = "JetBrainsMonoNerdFontMono-Medium";
+  stylix.fonts.monospace.name = "JetBrainsMono";
 }
