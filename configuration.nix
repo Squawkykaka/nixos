@@ -8,13 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./configuration/plymouth.nix
-    ];
+      # ./configuration/plymouth.nix
+      ./configuration
 
-  # stylix
-  stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-  stylix.image = ./image.png;
+    ];
 
   # zsh
   programs.zsh.enable = true;
