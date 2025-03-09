@@ -22,6 +22,7 @@
     enable = true;
     userName = "Squawkykaka";
     userEmail = "squawkykaka@gmail.com";
+    pull.rebase = true;
   };
 
   programs.ghostty = {
