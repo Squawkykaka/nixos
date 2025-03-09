@@ -8,4 +8,5 @@
   # cursor
   stylix.cursor.package = pkgs.bibata-cursors;
   stylix.cursor.name = "Bibita-Modern-Ice";
+  stylix.cursor.size = 22;
 }
