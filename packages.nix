@@ -7,6 +7,7 @@ oh-my-zsh
 vscodium
 obsidian
 webcord
+thefuck
 
 mangohud
 protonup-qt
