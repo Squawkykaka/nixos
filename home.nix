@@ -30,11 +30,11 @@
       ll = "ls -l";
       update = "sudo nixos-rebuild switch";
     };
-#    history.size = 10000;
+   history.size = 10000;
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = [ "git" "battery" "thefuck" ];
       theme = "robbyrussell";
     };
   };
