@@ -8,6 +8,7 @@ vscodium
 obsidian
 webcord
 thefuck
+openssh
 
 mangohud
 protonup-qt
