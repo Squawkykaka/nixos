@@ -9,8 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./configuration/plymouth.nix
-      ./configuration/stylix.nix
-
+      # ./configuration/stylix.nix
     ];
 
   # zsh
