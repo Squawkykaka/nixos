@@ -1,6 +1,5 @@
 { pkgs, ... }:
 with pkgs; [
-ghostty
 btop
 docker
 _1password-gui

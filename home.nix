@@ -20,6 +20,14 @@
     userEmail = "squawkykaka@gmail.com";
   };
 
+  programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      theme = "catppuccin-mocha";
+    };
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
