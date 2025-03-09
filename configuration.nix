@@ -8,8 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # ./configuration/plymouth.nix
-      ./configuration
+      ./configuration/plymouth.nix
+      ./configuration/stylix.nix
 
     ];
 
