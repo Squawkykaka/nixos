@@ -1,14 +1,13 @@
 { config, pkgs, ... }:
 {
   # stylix
-  stylix.enable = true;
-  stylix.autoEnable = true;
+  stylix.enable = false;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
   stylix.image = ../image.png;
 
   # cursor
   stylix.cursor.package = pkgs.bibata-cursors;
-  stylix.cursor.name = "Bibita-Modern-Ice";
+  stylix.cursor.name = "Bibata-Modern-Ice";
   stylix.cursor.size = 22;
 
   # monospace font
