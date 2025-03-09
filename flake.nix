@@ -34,7 +34,7 @@
           nixos-hardware.nixosModules.lenovo-thinkpad-x1-extreme-gen2
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
-            home-manager.backupFileExtension = "backup";
+            home-manager.backupFileExtension = "replace";
             home-manager.useUserPackages = true;
             home-manager.users.gleask.imports = [
                 ./home.nix
