@@ -11,6 +11,7 @@ thefuck
 openssh
 xsettingsd
 libvirt-glib
+looking-glass-client
 
 mangohud
 protonup-qt
