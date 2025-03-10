@@ -1,5 +1,5 @@
 {
-  description = "flake for yourHostNameGoesHere with Home Manager enabled";
+  description = "flake for nix-squawkykaka with Home Manager enabled";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=release-24.11";
@@ -38,6 +38,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.gleask.imports = [
                 ./home.nix
+                ./homemanager/zsh.nix
                 catppuccin.homeManagerModules.catppuccin
             ];
           }

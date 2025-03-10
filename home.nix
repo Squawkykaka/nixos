@@ -1,21 +1,15 @@
 { config, pkgs, system, inputs, ... }:
 
 {
-  imports = [
-    ./homemanager/zsh.nix
-  ];
-
   home.username = "gleask";
   home.homeDirectory = "/home/gleask";
 
-  catppuccin.enable = true;
+  catppuccin.ghostty.enable = true;
 
   home.packages = with pkgs; [
-#    zen-browser.packages."${system}".specific
     zip
     unzip
     prismlauncher
-    mesa-demos
   ];
 
   programs.git = {
@@ -28,7 +22,7 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      theme = "catppuccin-mocha";
+      theme = "catppuccin-frappe";
     };
   };
   home.stateVersion = "24.11";
