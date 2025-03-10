@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./configuration/plymouth.nix
       ./configuration/stylix.nix
+      ./configuration/users.nix
     ];
 
   # delete those annoying files
@@ -46,8 +47,8 @@
   };
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = /dev/nvme0n1;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable networking
   networking.hostName = "nix-squawkykaka"; # Define your hostname.
@@ -120,7 +121,7 @@
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/gleask/.steam/root/compatibilitytools.d";
   };
-  
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
