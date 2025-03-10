@@ -11,7 +11,6 @@
       ./configuration/plymouth.nix
       ./configuration/stylix.nix
       ./configuration/users.nix
-      # ./configuration/virtualisation.nix
     ];
 
   # delete those annoying files
