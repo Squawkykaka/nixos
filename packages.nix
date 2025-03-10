@@ -10,6 +10,8 @@ webcord
 thefuck
 openssh
 xsettingsd
+libvirt-glib
+linuxKernel.packages.linux_6_6.kvmfr
 
 mangohud
 protonup-qt

@@ -11,6 +11,7 @@
       ./configuration/plymouth.nix
       ./configuration/stylix.nix
       ./configuration/users.nix
+      # ./configuration/virtualisation.nix
     ];
 
   # delete those annoying files
@@ -24,11 +25,8 @@
 
   # virtualisation
   programs.virt-manager.enable = true;
-
   users.groups.libvirtd.members = ["gleask"];
-
   virtualisation.libvirtd.enable = true;
-
   virtualisation.spiceUSBRedirection.enable = true;
 
   # zsh
