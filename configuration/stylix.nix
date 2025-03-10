@@ -2,7 +2,7 @@
 {
   # stylix
   stylix.enable = false;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
   stylix.image = ../image.png;
 
   # cursor

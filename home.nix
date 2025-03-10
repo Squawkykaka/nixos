@@ -10,6 +10,7 @@
     zip
     unzip
     prismlauncher
+    tree
   ];
 
   programs.git = {
