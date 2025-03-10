@@ -116,7 +116,7 @@
   users.users.gleask = {
     isNormalUser = true;
     description = "George Leask";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
   };
 
   # Install firefox.
