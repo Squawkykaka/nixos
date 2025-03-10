@@ -22,7 +22,7 @@
     ...
   }: {
     nixosConfigurations = {
-      nix-squawkykaka = nixpkgs.lib.nixosSystem {   # Change 'nixos-squawkykaka' to 'nixos'
+      nix-squawkykaka = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
 
