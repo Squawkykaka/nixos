@@ -9,6 +9,7 @@ obsidian
 webcord
 thefuck
 openssh
+xsettingsd
 
 mangohud
 protonup-qt
