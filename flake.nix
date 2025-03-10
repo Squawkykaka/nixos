@@ -35,7 +35,6 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.backupFileExtension = "rebuild";
-            home-manager.useUserPackages = true;
             home-manager.users.gleask.imports = [
                 ./home.nix
                 ./homemanager/zsh.nix
