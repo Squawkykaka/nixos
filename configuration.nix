@@ -12,6 +12,15 @@
       ./configuration/stylix.nix
     ];
 
+  # delete those annoying files
+  system.userActivationScripts = {
+  removeConflictingFiles = {
+      text = ''
+        find ~ -type f -name "*.rebuild" -delete
+      '';
+    };
+  };
+
   # zsh
   programs.zsh.enable = true;
   # Enable opengl
