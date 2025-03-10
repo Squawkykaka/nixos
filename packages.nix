@@ -11,7 +11,7 @@ thefuck
 openssh
 xsettingsd
 libvirt-glib
-anaconda
+rPackages.Anaconda
 # looking-glass-client
 
 mangohud
