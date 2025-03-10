@@ -8,7 +8,7 @@
   # cursor
   stylix.cursor.package = pkgs.bibata-cursors;
   stylix.cursor.name = "Bibata-Modern-Ice";
-  stylix.cursor.size = 22;
+  stylix.cursor.size = 26;
 
   # monospace font
   stylix.fonts.monospace.package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
