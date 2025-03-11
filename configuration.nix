@@ -11,6 +11,7 @@
       ./configuration/plymouth.nix
       ./configuration/stylix.nix
       ./configuration/users.nix
+      ./configuration/drivers/nvidia.nix
     ];
 
   # delete those annoying files
@@ -35,11 +36,6 @@
      enable = true;
      enable32Bit = true;
   };
-
-  # enable nvidia gpu support
-  hardware.nvidia.open = true;
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.modesetting.enable = true;
 
   # enable prime offloading
   hardware.nvidia.prime = {
