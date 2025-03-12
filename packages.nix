@@ -12,7 +12,6 @@ openssh
 xsettingsd
 libvirt-glib
 xpipe
-google-chrome
 
 mangohud
 protonup-qt
