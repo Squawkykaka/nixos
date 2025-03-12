@@ -11,12 +11,13 @@
       ll = "ls -l";
       update = "nh os switch /etc/nixos";
     };
-   history.size = 10000;
+    
+    history.size = 10000;
 
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "battery" "thefuck" ];
-      theme = "robbyrussell";
+      theme = "jbergantine";
     };
   };
 }
