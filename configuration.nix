@@ -14,6 +14,7 @@
       ./configuration/drivers/nvidia.nix
       ./configuration/clean.nix
       ./configuration/virtualisation.nix
+      ./configuration/apps/steam.nix
     ];
 
   # delete those annoying files
