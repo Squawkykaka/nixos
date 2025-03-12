@@ -31,7 +31,7 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      theme = "catppuccin-frappe";
+      theme = "ayu";
     };
   };
   home.stateVersion = "24.11";
