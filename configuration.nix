@@ -12,6 +12,7 @@
       ./configuration/stylix.nix
       ./configuration/users.nix
       ./configuration/drivers/nvidia.nix
+      ./configuration/clean.nix
     ];
 
   # delete those annoying files

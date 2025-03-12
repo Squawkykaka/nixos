@@ -9,7 +9,7 @@
 
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch --log-fomat bar-with-logs";
+      update = "sudo nh os switch /etc/nixos";
     };
    history.size = 10000;
 
