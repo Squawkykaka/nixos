@@ -9,7 +9,7 @@
 
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nh os switch /etc/nixos";
+      update = "nh os switch /etc/nixos";
     };
    history.size = 10000;
 

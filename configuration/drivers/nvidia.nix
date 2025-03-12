@@ -26,5 +26,16 @@
       nvidiaSettings = true;
       # Optionally, you may need to select the appropriate driver version for your specific GPU.
       package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+      # enable prime offloading
+      prime = {
+        offload = {
+          enable = true;
+          enableOffloadCmd = true; # Lets you use `nvidia-offload %command%` in steam
+        };
+        
+        intelBusId = "PCI:00:02:0";
+        nvidiaBusId = "PCI:01:00:0";
+      };
     };
 }

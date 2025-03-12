@@ -13,6 +13,7 @@
       ./configuration/users.nix
       ./configuration/drivers/nvidia.nix
       ./configuration/clean.nix
+      ./configuration/virtualisation.nix
     ];
 
   # delete those annoying files
@@ -22,31 +23,6 @@
         find ~ -type f -name "*.rebuild" -delete
       '';
     };
-  };
-
-  # virtualisation
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["gleask"];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
-
-  # zsh
-  programs.zsh.enable = true;
-  # Enable opengl
-  hardware.graphics = {
-     enable = true;
-     enable32Bit = true;
-  };
-
-  # enable prime offloading
-  hardware.nvidia.prime = {
-    offload = {
-      enable = true;
-      enableOffloadCmd = true; # Lets you use `nvidia-offload %command%` in steam
-    };
-    
-    intelBusId = "PCI:00:02:0";
-    nvidiaBusId = "PCI:01:00:0";
   };
 
   # Bootloader.
@@ -88,7 +64,6 @@
   services.displayManager.ly.enable = true;
   services.desktopManager.plasma6.enable = true;
   
-
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -116,15 +91,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-
-  # Install steam
-  programs.steam.enable = true;
-  programs.steam.gamescopeSession.enable = true;
-  programs.gamemode.enable = true;
-
-  environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/gleask/.steam/root/compatibilitytools.d";
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
