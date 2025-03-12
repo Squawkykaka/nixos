@@ -4,8 +4,6 @@
   home.username = "gleask";
   home.homeDirectory = "/home/gleask";
 
-  # catppuccin.ghostty.enable = true;
-
   home.packages = with pkgs; [
     zip
     unzip
@@ -33,7 +31,6 @@
     settings = {
       # theme = "ayu";
       custom-shader = ["~/shaders/bettercrt.glsl" "~/shaders/bloom.glsl"];
-      
     };
   };
   home.stateVersion = "24.11";

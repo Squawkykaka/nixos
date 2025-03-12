@@ -38,6 +38,7 @@
             home-manager.users.gleask.imports = [
                 ./home.nix
                 ./homemanager/zsh.nix
+                ./homemanager/neovim.nix
                 catppuccin.homeManagerModules.catppuccin
             ];
           }
