@@ -2,6 +2,7 @@
 {
   # stylix
   stylix.enable = true;
+  stylix.targets.plymouth.enable = false;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
   stylix.image = ../image.png;
 
