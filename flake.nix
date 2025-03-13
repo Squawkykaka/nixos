@@ -11,7 +11,6 @@
         url = "github:nix-community/home-manager/release-24.11";
         inputs.nixpkgs.follows = "nixpkgs";
     };
-
     # nixvim = {
     #   # url = "github:nix-community/nixvim";
     #   # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
@@ -20,16 +19,17 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
   };
-  outputs = inputs@{
+  outputs = {
     self,
     nixpkgs,
     catppuccin,
     stylix,
     nixos-hardware,
     home-manager,
-    # nixvim,
     ...
-  }: {
+  } @ inputs: let 
+    system = "x86_64-linux";
+  in {
     nixosConfigurations = {
       nix-squawkykaka = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

@@ -13,6 +13,7 @@ xsettingsd
 libvirt-glib
 xpipe
 ripgrep
+tree-sitter
 
 mangohud
 protonup-qt
