@@ -12,6 +12,7 @@ openssh
 xsettingsd
 libvirt-glib
 xpipe
+ripgrep
 
 mangohud
 protonup-qt

@@ -11,6 +11,14 @@
         url = "github:nix-community/home-manager/release-24.11";
         inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # nixvim = {
+    #   # url = "github:nix-community/nixvim";
+    #   # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
+    #   url = "github:nix-community/nixvim/nixos-24.11";
+
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
   outputs = inputs@{
     self,
@@ -19,6 +27,7 @@
     stylix,
     nixos-hardware,
     home-manager,
+    # nixvim,
     ...
   }: {
     nixosConfigurations = {
@@ -30,6 +39,7 @@
           ./configuration.nix
           catppuccin.nixosModules.catppuccin
           stylix.nixosModules.stylix
+          # nixvim.nixosModules.nixvim
 
           nixos-hardware.nixosModules.lenovo-thinkpad-x1-extreme-gen2
           home-manager.nixosModules.home-manager {
