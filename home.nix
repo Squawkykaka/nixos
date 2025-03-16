@@ -30,7 +30,7 @@
     enableZshIntegration = true;
     settings = {
       # theme = "ayu";
-      custom-shader = ["~/shaders/bettercrt.glsl" "~/shaders/bloom.glsl"];
+      # custom-shader = ["~/shaders/bettercrt.glsl" "~/shaders/bloom.glsl"];
     };
   };
   home.stateVersion = "24.11";
