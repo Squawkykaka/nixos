@@ -62,7 +62,7 @@
   services.auto-cpufreq.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.ly.enable = true;
+  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   
   # Enable sound with pipewire.
