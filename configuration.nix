@@ -30,6 +30,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Enable networking
   networking.hostName = "nix-squawkykaka"; # Define your hostname.
