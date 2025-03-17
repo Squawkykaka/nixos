@@ -1,17 +1,15 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
+{
+  nix.distributedBuilds = true;
+  nix.settings.builders-use-substitutes = true;
 
-{ 
-  nix = {
-    distributedBuilds = true;
-    buildMachines = [
-      {
-        hostName = "nixos-builder";
-        system = "x86_64-linux";
-        protocol = "ssh";
-        maxJobs = 4;  # Adjust based on your system capabilities
-        speedFactor = 1;
-        supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
-      }
-    ];
-  };
+  nix.buildMachines = [
+    {
+      hostName = "nixos-builder";
+      sshUser = "remotebuild";
+      sshKey = "/root/.ssh/remotebuild";
+      system = pkgs.stdenv.hostPlatform.system;
+      supportedFeatures = [ "nixos-test" "big-parallel" "kvm" ];
+    }
+  ];
 }
