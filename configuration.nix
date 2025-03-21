@@ -43,7 +43,8 @@
   # Enable networking
   networking.hostName = "nix-squawkykaka"; # Define your hostname.
   networking.networkmanager.enable = true;
-  networking.firewall.enable = true;
+  networking.firewall.enable = false;
+  networking.enableIPv6  = false;
 
   # Set your time zone.
   time.timeZone = "Pacific/Auckland";
