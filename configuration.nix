@@ -40,6 +40,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
   # Enable networking
   networking.hostName = "nix-squawkykaka"; # Define your hostname.
   networking.networkmanager.enable = true;

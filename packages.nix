@@ -14,6 +14,9 @@ libvirt-glib
 xpipe
 ripgrep
 tree-sitter
+(writeShellScriptBin "pakku" ''
+  ${jre}/bin/java -jar /home/gleask/pakku.jar $@
+'')
 
 mangohud
 protonup-qt
