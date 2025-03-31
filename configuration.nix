@@ -46,10 +46,9 @@
   # Bootloader.
   boot.loader.grub = {
     enable = true;
-    version = 2;
     efiSupport = true;
     device = "nodev";
-  }
+  };
 
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
