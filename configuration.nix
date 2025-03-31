@@ -77,7 +77,7 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = false;
-  virtualisation.docker.enable = true;
+  virtualisation.docker.enable = false;
 
   # enable autocpufreq
   services.power-profiles-daemon.enable = false;
