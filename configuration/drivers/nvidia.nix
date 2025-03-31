@@ -33,11 +33,11 @@
 
       # enable prime offloading
       prime = {
-        sync.enable = true;
-        # offload = {
-        #   enable = true;
-        #   enableOffloadCmd = true; # Lets you use `nvidia-offload %command%` in steam
-        # };
+        # sync.enable = true;
+        offload = {
+          enable = true;
+          enableOffloadCmd = true; # Lets you use `nvidia-offload %command%` in steam
+        };
         
         intelBusId = "PCI:00:02:0";
         nvidiaBusId = "PCI:01:00:0";
