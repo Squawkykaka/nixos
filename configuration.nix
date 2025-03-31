@@ -44,7 +44,7 @@
   programs.hyprland.enable = true;
 
   # Bootloader.
-  boot.loader.grub {
+  boot.loader.grub = {
     enable = true;
     version = 2;
     efiSupport = true;
