@@ -51,7 +51,7 @@
                 ./homemanager/neovim.nix
                 ./homemanager/hyprland.nix
 
-                catppuccin.homeManagerModules.catppuccin
+                catppuccin.homeModules.catppuccin
             ];
           }
         ];

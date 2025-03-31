@@ -18,6 +18,7 @@ tree-sitter
   ${jre}/bin/java -jar /home/gleask/pakku.jar $@
 '')
 
+obs-studio
 mangohud
 protonup-qt
 protonup
