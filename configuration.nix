@@ -43,14 +43,18 @@
 
   programs.hyprland.enable = true;
 
-  # Bootloader.
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    device = "nodev";
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot"; # ← use the same mount point here.
+    };
+    grub = {
+      efiSupport = true;
+      #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
+      device = "nodev";
+    };
   };
 
-  boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth

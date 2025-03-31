@@ -2,7 +2,7 @@
   boot = {
 
     plymouth = {
-      enable = true;
+      enable = false;
       theme = "blahaj";
       # themePackages = with pkgs; [
       #   # By default we would install all themes
@@ -17,8 +17,8 @@
     };
 
     # Enable "Silent Boot"
-    consoleLogLevel = 0;
-    initrd.verbose = false;
+    # consoleLogLevel = 0;
+    # initrd.verbose = false;
     kernelParams = [
       "quiet"
       "splash"
@@ -36,7 +36,7 @@
     # Hide the OS choice for bootloaders.
     # It's still possible to open the bootloader list by pressing any key
     # It will just not appear on screen unless a key is pressed
-    loader.timeout = 0;
+    # loader.timeout = 0;
 
   };
 }
