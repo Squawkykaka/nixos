@@ -12,6 +12,7 @@
       ./configuration/stylix.nix
       ./configuration/users.nix
       ./configuration/drivers/nvidia.nix
+      ./configuration/drivers/bootfix.nix
       ./configuration/clean.nix
       ./configuration/virtualisation.nix
       ./configuration/apps/steam.nix
@@ -43,7 +44,13 @@
   programs.hyprland.enable = true;
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub {
+    enable = true;
+    version = 2;
+    efiSupport = true;
+    device = "nodev";
+  }
+
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
