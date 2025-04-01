@@ -18,6 +18,7 @@ tree-sitter
   ${jre}/bin/java -jar /home/gleask/pakku.jar $@
 '')
 
+r2modman
 logseq
 obs-studio
 mangohud

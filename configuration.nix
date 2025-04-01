@@ -16,6 +16,8 @@
       ./configuration/clean.nix
       ./configuration/virtualisation.nix
       ./configuration/apps/steam.nix
+      ./configuration/apps/flatpak.nix
+
       ./configuration/distributed-builds.nix
     ];
 
@@ -31,6 +33,9 @@
   nixpkgs.config.permittedInsecurePackages = [
     "electron-27.3.11"
   ];
+
+  # enable logitech support
+  services.solaar.enable = true;
 
   # hyprland cache
   nix.settings = {

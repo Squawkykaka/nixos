@@ -11,6 +11,14 @@
         url = "github:nix-community/home-manager/release-24.11";
         inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Add logitechg support
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
+      #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.1.tar.gz"; # uncomment line for solaar version 1.1.13
+      #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # nixvim = {
     #   # url = "github:nix-community/nixvim";
     #   # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
@@ -26,6 +34,7 @@
     stylix,
     nixos-hardware,
     home-manager,
+    solaar,
     ...
   } @ inputs: let 
     system = "x86_64-linux";
@@ -39,6 +48,7 @@
           ./configuration.nix
           catppuccin.nixosModules.catppuccin
           stylix.nixosModules.stylix
+          solaar.nixosModules.default
           # nixvim.nixosModules.nixvim
 
           nixos-hardware.nixosModules.lenovo-thinkpad-x1-extreme-gen2
