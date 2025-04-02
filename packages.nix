@@ -1,8 +1,7 @@
 { pkgs, ... }:
 with pkgs; [
 btop
-docker
-_1password-gui
+bitwarden-desktop
 oh-my-zsh
 vscodium
 obsidian
@@ -17,6 +16,10 @@ tree-sitter
 (writeShellScriptBin "pakku" ''
   ${jre}/bin/java -jar /home/gleask/pakku.jar $@
 '')
+
+waybar
+wofi
+swww
 
 r2modman
 logseq

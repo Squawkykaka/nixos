@@ -21,6 +21,9 @@
       ./configuration/distributed-builds.nix
     ];
 
+  # set ozone variable
+  environment.variables.NIXOS_OZONE_WL = "1";
+
   # delete those annoying files
   system.userActivationScripts = {
   removeConflictingFiles = {
@@ -55,6 +58,7 @@
     };
     grub = {
       efiSupport = true;
+      gfxmodeEfi = "1920x1080";
       #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
       device = "nodev";
     };
