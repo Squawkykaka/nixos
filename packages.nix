@@ -28,4 +28,6 @@ lutris
 bottles
 
 wineWowPackages.full
+
+# XlibsForQt5.plasma-workspace
 ]

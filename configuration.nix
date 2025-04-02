@@ -14,7 +14,7 @@
       ./configuration/drivers/nvidia.nix
       ./configuration/drivers/bootfix.nix
       ./configuration/clean.nix
-      ./configuration/virtualisation.nix
+      # ./configuration/virtualisation.nix
       ./configuration/apps/steam.nix
       ./configuration/apps/flatpak.nix
 
@@ -101,6 +101,14 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+  services.displayManager.defaultSession = "plasma";
+  services.displayManager.sddm.wayland.enable = true;
+
+  # enable dwm
+  services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
+    src = /home/gleask/dwm;
+  };
+
   
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
