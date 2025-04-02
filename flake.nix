@@ -59,7 +59,6 @@
                 ./home.nix
                 ./homemanager/zsh.nix
                 ./homemanager/neovim.nix
-                ./homemanager/hyprland.nix
 
                 catppuccin.homeModules.catppuccin
             ];
