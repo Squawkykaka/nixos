@@ -9,7 +9,6 @@ webcord
 thefuck
 openssh
 xsettingsd
-libvirt-glib
 xpipe
 ripgrep
 tree-sitter
@@ -20,17 +19,17 @@ tree-sitter
 waybar
 wofi
 swww
+pavucontrol
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
+wlogout
+
+sddm-astronaut
 
 r2modman
 logseq
 obs-studio
 mangohud
-protonup-qt
 protonup
 lutris
-bottles
-
-wineWowPackages.full
-
-# XlibsForQt5.plasma-workspace
 ]

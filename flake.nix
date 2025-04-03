@@ -19,6 +19,13 @@
       #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+
+      # Optional but recommended to limit the size of your system closure.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # nixvim = {
     #   # url = "github:nix-community/nixvim";
     #   # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
@@ -35,6 +42,7 @@
     nixos-hardware,
     home-manager,
     solaar,
+    lanzaboote,
     ...
   } @ inputs: let 
     system = "x86_64-linux";
@@ -50,19 +58,26 @@
           stylix.nixosModules.stylix
           solaar.nixosModules.default
           # nixvim.nixosModules.nixvim
+          lanzaboote.nixosModules.lanzaboote
 
-          nixos-hardware.nixosModules.lenovo-thinkpad-x1-extreme-gen2
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.backupFileExtension = "rebuild";
-            home-manager.users.gleask.imports = [
-                ./home.nix
-                ./homemanager/zsh.nix
-                ./homemanager/neovim.nix
+          ({ pkgs, lib, ... }: {
 
-                catppuccin.homeModules.catppuccin
+            environment.systemPackages = [
+              # For debugging and troubleshooting Secure Boot.
+              pkgs.sbctl
             ];
-          }
+
+            # Lanzaboote currently replaces the systemd-boot module.
+            # This setting is usually set to true in configuration.nix
+            # generated at installation time. So we force it to false
+            # for now.
+            boot.loader.systemd-boot.enable = lib.mkForce false;
+
+            boot.lanzaboote = {
+              enable = true;
+              pkiBundle = "/etc/secureboot";
+            };
+          })
         ];
       };
     };

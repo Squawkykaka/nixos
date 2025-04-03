@@ -22,7 +22,7 @@
     ];
 
   # set ozone variable
-  environment.variables.NIXOS_OZONE_WL = "1";
+#  environment.variables.NIXOS_OZONE_WL = "1";
 
   # delete those annoying files
   system.userActivationScripts = {
@@ -51,18 +51,22 @@
 
   programs.hyprland.enable = true;
 
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot"; # ← use the same mount point here.
-    };
-    grub = {
-      efiSupport = true;
-      gfxmodeEfi = "1920x1080";
-      #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
-      device = "nodev";
-    };
-  };
+  # boot.loader = {
+  #   efi = {
+  #     canTouchEfiVariables = true;
+  #     efiSysMountPoint = "/boot"; # ← use the same mount point here.
+  #   };
+  #   grub = {
+  #     efiSupport = true;
+  #     gfxmodeEfi = "1920x1080";
+  #     #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
+  #     device = "nodev";
+  #   };
+  # };
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
@@ -72,6 +76,7 @@
   # Enable networking
   networking.hostName = "nix-squawkykaka"; # Define your hostname.
   networking.networkmanager.enable = true;
+
   networking.firewall.enable = false;
   networking.enableIPv6  = false;
 
@@ -103,17 +108,14 @@
   services.auto-cpufreq.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  services.displayManager.defaultSession = "plasma";
-  services.displayManager.sddm.wayland.enable = true;
+  # services.displayManager.sddm.enable = true;
+  programs.uwsm.enable = true;
+  programs.hyprland.withUWSM = true;
 
-  # enable dwm
-  services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
-    src = /home/gleask/dwm;
-  };
+  # services.desktopManager.plasma6.enable = true;
+  # services.displayManager.defaultSession = "plasma";
+  # services.displayManager.sddm.wayland.enable = true;
 
-  
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;

@@ -11,9 +11,9 @@
     plugins = [
       pkgs.vimPlugins.render-markdown-nvim
       pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-      pkgs.vimPlugins.coq_nvim
-      pkgs.vimPlugins.oil-nvim
-      pkgs.vimPlugins.coc-highlight
+      pkgs.vimPlugins.statix
+      pkgs.vimPlugins.lz-n
+      pkgs.vimPlugins.telescope-nvim
     ];
   };
 
