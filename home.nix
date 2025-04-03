@@ -7,17 +7,10 @@
   home.packages = with pkgs; [
     zip
     unzip
+    killall
     prismlauncher
     tree
   ];
-
-  dconf.settings = {
-    "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
-    };
-  };
-
 
   programs.git = {
     enable = true;
