@@ -5,6 +5,7 @@ bitwarden-desktop
 oh-my-zsh
 vscodium
 obsidian
+firefox
 webcord
 thefuck
 openssh

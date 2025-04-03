@@ -21,10 +21,10 @@
       ./configuration/distributed-builds.nix
     ];
 
-  # set ozone variable
+  # set ozone variable, disabled as it causes electron apps to take 2 mins to launch
 #  environment.variables.NIXOS_OZONE_WL = "1";
 
-  # delete those annoying files
+  # delete the homemanager backup files
   system.userActivationScripts = {
   removeConflictingFiles = {
       text = ''
@@ -33,12 +33,10 @@
     };
   };
 
+  # needed for logseq to work
   nixpkgs.config.permittedInsecurePackages = [
     "electron-27.3.11"
   ];
-
-  # enable logitech support
-  services.solaar.enable = true;
 
   # hyprland cache
   nix.settings = {
@@ -49,25 +47,11 @@
       ];
   };
 
+  # enable hyprland
   programs.hyprland.enable = true;
 
-  # boot.loader = {
-  #   efi = {
-  #     canTouchEfiVariables = true;
-  #     efiSysMountPoint = "/boot"; # ← use the same mount point here.
-  #   };
-  #   grub = {
-  #     efiSupport = true;
-  #     gfxmodeEfi = "1920x1080";
-  #     #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
-  #     device = "nodev";
-  #   };
-  # };
-
-  boot.loader.systemd-boot.enable = true;
+  # set kernal, the canTouchEfiVariables option is maybe not required
   boot.loader.efi.canTouchEfiVariables = true;
-
-
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -76,8 +60,6 @@
   # Enable networking
   networking.hostName = "nix-squawkykaka"; # Define your hostname.
   networking.networkmanager.enable = true;
-
-  networking.firewall.enable = false;
   networking.enableIPv6  = false;
 
   # Set your time zone.
@@ -85,7 +67,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_NZ.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_NZ.UTF-8";
     LC_IDENTIFICATION = "en_NZ.UTF-8";
@@ -98,23 +79,13 @@
     LC_TIME = "en_NZ.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = false;
-  virtualisation.docker.enable = false;
-
   # enable autocpufreq
   services.power-profiles-daemon.enable = false;
   services.auto-cpufreq.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm.enable = true;
-  programs.uwsm.enable = true;
-  programs.hyprland.withUWSM = true;
-
-  # services.desktopManager.plasma6.enable = true;
-  # services.displayManager.defaultSession = "plasma";
-  # services.displayManager.sddm.wayland.enable = true;
+  # Enable SDDM.
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -128,14 +99,13 @@
     jack.enable = true;
   };
 
+  # enable zsh and tailscale
   programs.zsh.enable = true;
   services.tailscale.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-
-  # set shell to zsh
-  users.defaultUserShell = pkgs.zsh;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.gleask = {
@@ -144,12 +114,10 @@
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # enable flakes and import packages
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs; import ./packages.nix { inherit pkgs; };
   
