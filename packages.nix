@@ -7,7 +7,6 @@ vscodium
 obsidian
 firefox
 webcord
-thefuck
 openssh
 xsettingsd
 xpipe

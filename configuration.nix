@@ -86,8 +86,10 @@
   # Enable SDDM.
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.theme = "${pkgs.sddm-astronaut}/share/sddm/themes/sddm-astronaut-theme";
 
   # Enable sound with pipewire.
+
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

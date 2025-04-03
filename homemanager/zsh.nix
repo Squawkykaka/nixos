@@ -21,7 +21,7 @@
 
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "battery" "thefuck" ];
+        plugins = [ "git" "battery" ];
         theme = "jbergantine";
       };
   };
