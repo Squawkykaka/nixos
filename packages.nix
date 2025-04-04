@@ -5,16 +5,20 @@ bitwarden-desktop
 oh-my-zsh
 vscodium
 obsidian
+killall
 firefox
 webcord
 openssh
 xsettingsd
+jetbrains.idea-ultimate
 xpipe
 ripgrep
 tree-sitter
 (writeShellScriptBin "pakku" ''
   ${jre}/bin/java -jar /home/gleask/pakku.jar $@
 '')
+
+socat
 
 waybar
 wofi
@@ -23,8 +27,6 @@ pavucontrol
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk
 wlogout
-
-sddm-astronaut
 
 r2modman
 logseq

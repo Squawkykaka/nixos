@@ -85,8 +85,9 @@
 
   # Enable SDDM.
   services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.package = pkgs.kdePackages.sddm;
   services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.theme = "${pkgs.sddm-astronaut}/share/sddm/themes/sddm-astronaut-theme";
+  # services.displayManager.sddm.theme = "${pkgs.catppuccin-sddm}/share/sddm/themes/catppuccin-mocha";
 
   # Enable sound with pipewire.
 

@@ -20,7 +20,7 @@
       '';
 
       oh-my-zsh = {
-        enable = true;
+        enable = false;
         plugins = [ "git" "battery" ];
         theme = "jbergantine";
       };
