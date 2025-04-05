@@ -33,5 +33,10 @@ logseq
 obs-studio
 mangohud
 protonup
-lutris
+lutris.override {
+  extraPkgs = pkgs: [
+    wineWowPackages.stable
+    gamescope
+  ];
+}
 ]
