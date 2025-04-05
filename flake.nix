@@ -26,13 +26,7 @@
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixvim = {
-    #   # url = "github:nix-community/nixvim";
-    #   # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-    #   url = "github:nix-community/nixvim/nixos-24.11";
-
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
   };
   outputs = {
     self,
@@ -43,23 +37,20 @@
     home-manager,
     solaar,
     lanzaboote,
+    determinate,
     ...
-  } @ inputs: let 
-    system = "x86_64-linux";
-  in {
+  }: {
     nixosConfigurations = {
       nix-squawkykaka = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
 
         modules = [
           ./configuration.nix
           catppuccin.nixosModules.catppuccin
           stylix.nixosModules.stylix
           solaar.nixosModules.default
-          # nixvim.nixosModules.nixvim
           lanzaboote.nixosModules.lanzaboote
-
+          determinate.nixosModules.default
           ({ pkgs, lib, ... }: {
 
             environment.systemPackages = [
