@@ -27,6 +27,7 @@ pavucontrol
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk
 wlogout
+networkmanagerapplet
 
 r2modman
 logseq
