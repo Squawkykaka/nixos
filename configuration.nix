@@ -17,7 +17,7 @@
       # ./configuration/virtualisation.nix
       ./configuration/apps/steam.nix
       ./configuration/apps/flatpak.nix
-      ./configuration/polkit.nix
+      # ./configuration/polkit.nix
 
       ./configuration/distributed-builds.nix
     ];

@@ -9,16 +9,15 @@ killall
 firefox
 webcord
 openssh
-xsettingsd
 jetbrains.idea-ultimate
 xpipe
+jdk17
+gradle
 ripgrep
 tree-sitter
 (writeShellScriptBin "pakku" ''
   ${jre}/bin/java -jar /home/gleask/pakku.jar $@
 '')
-
-socat
 
 waybar
 wofi
@@ -44,4 +43,13 @@ protonup
 winetricks
 
 at-spi2-core
+
+(retroarch.override {
+  cores = with libretro; [
+    genesis-plus-gx
+    snes9x
+    beetle-psx-hw
+    twenty-fortyeight
+  ];
+})
 ]

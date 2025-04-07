@@ -2,7 +2,7 @@
   boot = {
 
     plymouth = {
-      enable = true;
+      enable = false;
       theme = "optimus";
       themePackages = with pkgs; [
         # By default we would install all themes
